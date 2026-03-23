@@ -1,0 +1,11 @@
+﻿  Renderer.cpp
+C:\Users\turbo\source\repos\2026_Shader_Programming\SimpleGame\Renderer.cpp(59,13): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
+  (소스 파일 '/Renderer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\turbo\source\repos\2026_Shader_Programming\SimpleGame\Renderer.cpp(108,21): warning C4267: '=': 'size_t'에서 'GLint'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Renderer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\turbo\source\repos\2026_Shader_Programming\SimpleGame\Renderer.cpp(234,11): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
+  (소스 파일 '/Renderer.cpp'을(를) 컴파일하는 중)
+  
+  SimpleGame.vcxproj -> C:\Users\turbo\source\repos\2026_Shader_Programming\x64\Debug\SimpleGame.exe
