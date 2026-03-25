@@ -7,25 +7,38 @@ in float a_Mass;
 in vec2 a_Vel;
 in float a_RV;
 in float a_RV1;
+in float a_RV2;
+
+out float v_Grey;
 
 const float c_PI = 3.141592;
 const vec2 c_G = vec2(0, -9.8);
 
 
-void sin1() // ai가 만들었는데 잘 안됐음 ai 똥멍청함;;
+void sin1()
 {
-    float movement = mod(u_Time, 2.0); 
+    float lifeTime = a_RV + 0.5;
+    float newTime = (u_Time / 0.5) - a_RV1;
+    if (newTime > 0) {
+        float t = mod(newTime, 1.0);
+        float ampscale = t*0.5; // 0.5~0
+        float amp = 1 * (a_RV - 0.5) * ampscale; // 진폭
+        float sizescale = t * 2; // 시간이 지날수록 커지는 스케일
+        float period = a_RV2;
 
-    vec4 newPosition = vec4(a_Position, 1.0);
-    newPosition.x += movement;
+        vec4 newPosition;
+        newPosition.x = a_Position.x * sizescale - 1 + 2 * t;
+        newPosition.y = a_Position.y * sizescale + amp * sin(t * 2.0 * c_PI * period);
+        newPosition.z = a_Position.z;
+        newPosition.w = 1.0;
 
-    if (newPosition.x > 1.0) {
-        newPosition.x -= 2.0;
+        gl_Position = newPosition;
+        v_Grey = 1.0 - t; // 시간이 지날수록 어두워지게
+    }
+    else {
+        gl_Position = vec4(-10000.0, -1000.0, 0.0, 1.0);
     }
 
-    newPosition.y += sin(u_Time * 5.0) * 0.5;
-
-    gl_Position = newPosition;
 }
 
 void Basic()
@@ -119,18 +132,23 @@ float pseudoRandom(float n){
 
 void falling()
 {
-    float newTime = u_Time - pseudoRandom(a_RV);
-    if(newTime > 0){
-        float scale = pseudoRandom(a_RV);
-        float t =  mod(newTime,1.0);
+    float newTime = u_Time - a_RV1 * 3;
+    if(newTime > 0) { // 시작 시간보다 현재 시간이 크면 (즉, 파티클이 생성된 이후라면)
+
+        float lifeTime = a_RV2 + 0.5; // 파티클의 수명
+
+        float t =  mod(newTime, lifeTime); // newTime을 1.0으로 나눈 나머지로 반복 (계속 떨어지게). == LifeTime이 1초였다
+        float scale = pseudoRandom(a_RV1) * (lifeTime - t) / lifeTime;
         float tt = t*t;
+
         float vx = a_Vel.x / 10;
         float vy = a_Vel.y / 10;
-        float initPosX = a_Position.x * scale + cos(a_RV * c_PI * 2);
-        float initPosY = a_Position.y * scale + sin(a_RV * c_PI * 2);
+
+        float initPosX = a_Position.x * scale + cos(a_RV * c_PI * 2) * 0.8;
+        float initPosY = a_Position.y * scale + sin(a_RV * c_PI * 2) * 0.8;
 
         vec4 newPos;
-        newPos.x = initPosX + vx * t + a_RV1 * tt * 0.7;
+        newPos.x = initPosX + vx * t + 0.5 * c_G.x * tt;
         newPos.y = initPosY + vy * t + 0.5 * c_G.y * tt;
         newPos.z = 0;
         newPos.w = 1;
@@ -142,42 +160,42 @@ void falling()
     }
 }
 
-void waterfall()
-{
-    // 1. 파티클마다 시작 시간 다르게
-    float newTime = u_Time - pseudoRandom(a_RV);
-
-    if(t > 0.0)
-    {
-        float t =  mod(newTime,1.0);   // 반복 (계속 떨어지게)
-        float tt = t * t;
-
-        // 2. 시작 위치 (위쪽 라인에서 생성)
-        float startX = (a_RV * 2.0 - 1.0) * 0.3; // -0.3 ~ 0.3
-        float startY = 0.9; // 화면 위
-
-        // 3. 좌우 퍼짐 (물줄기 느낌)
-        float vx = a_RV1 * 0.3;
-
-        // 4. 아래로 떨어지는 속도
-        float vy = -1.5;
-
-        vec4 pos;
-        pos.x = startX + vx * localT;
-        pos.y = startY + vy * localT + 0.5 * c_G.y * tt;
-
-        pos.z = 0.0;
-        pos.w = 1.0;
-
-        gl_Position = pos;
-    }
-    else
-    {
-        gl_Position = vec4(-10000.0, 0.0, 0.0, 1.0);
-    }
-}
+//void waterfall()
+//{
+//    // 1. 파티클마다 시작 시간 다르게
+//    float newTime = u_Time - pseudoRandom(a_RV);
+//
+//    if(t > 0.0)
+//    {
+//        float t =  mod(newTime,1.0);   // 반복 (계속 떨어지게)
+//        float tt = t * t;
+//
+//        // 2. 시작 위치 (위쪽 라인에서 생성)
+//        float startX = (a_RV * 2.0 - 1.0) * 0.3; // -0.3 ~ 0.3
+//        float startY = 0.9; // 화면 위
+//
+//        // 3. 좌우 퍼짐 (물줄기 느낌)
+//        float vx = a_RV1 * 0.3;
+//
+//        // 4. 아래로 떨어지는 속도
+//        float vy = -1.5;
+//
+//        vec4 pos;
+//        pos.x = startX + vx * localT;
+//        pos.y = startY + vy * localT + 0.5 * c_G.y * tt;
+//
+//        pos.z = 0.0;
+//        pos.w = 1.0;
+//
+//        gl_Position = pos;
+//    }
+//    else
+//    {
+//        gl_Position = vec4(-10000.0, 0.0, 0.0, 1.0);
+//    }
+//}
 
 void main() 
 {
-	waterfall();
+	sin1();
 }

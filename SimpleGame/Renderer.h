@@ -30,7 +30,7 @@ private:
 	unsigned int m_WindowSizeX = 0;
 	unsigned int m_WindowSizeY = 0;
 
-	const int particleCount = 1'000'000;
+	const int particleCount = 10'000;
 
 	GLuint m_VBORect = 0;
 	GLuint m_SolidRectShader = 0;
