@@ -10,12 +10,13 @@ in float a_RV1;
 in float a_RV2;
 
 out float v_Grey;
+out float v_t;
 
 const float c_PI = 3.141592;
 const vec2 c_G = vec2(0, -9.8);
 
 
-void sin1()
+void Thrust()
 {
     float lifeTime = a_RV + 0.5;
     float newTime = (u_Time / 0.5) - a_RV1;
@@ -39,6 +40,40 @@ void sin1()
         gl_Position = vec4(-10000.0, -1000.0, 0.0, 1.0);
     }
 
+}
+
+void thrust_flame()
+{
+    float newTime = u_Time + a_RV;
+
+    if(newTime > 0.0)
+    {
+        float t = mod(newTime, 1.0);
+        float tt = t * t;
+
+        float startX = 0.0;
+        float startY = -0.8;
+
+        float vy = 2.5 + a_RV1; 
+
+        float spread = (a_RV - 0.5) * 0.3;
+        float wobble = sin(t * 20.0 + a_RV * 10.0) * 0.05;
+
+        float widen = t * 0.5;
+
+        vec4 pos;
+        pos.x = startX + spread * widen + wobble;
+        pos.y = startY + vy * t - 1.5 * tt;
+
+        pos.z = 0.0;
+        pos.w = 1.0;
+
+        gl_Position = pos;
+    }
+    else
+    {
+        gl_Position = vec4(-10000.0, 0.0, 0.0, 1.0);
+    }
 }
 
 void Basic()
@@ -197,5 +232,5 @@ void falling()
 
 void main() 
 {
-	sin1();
+	thrust_flame();
 }

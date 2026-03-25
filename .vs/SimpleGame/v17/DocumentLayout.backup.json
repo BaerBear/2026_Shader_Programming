@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\turbo\\source\\repos\\2026_Shader_Programming\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|C:\\Users\\turbo\\source\\repos\\2026_Shader_Programming\\SimpleGame\\Shaders\\triangle.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|solutionrelative:SimpleGame\\Shaders\\triangle.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|C:\\Users\\turbo\\source\\repos\\2026_Shader_Programming\\SimpleGame\\Shaders\\triangle.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|solutionrelative:SimpleGame\\Shaders\\triangle.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|C:\\Users\\turbo\\source\\repos\\2026_Shader_Programming\\SimpleGame\\Shaders\\triangle.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|solutionrelative:SimpleGame\\Shaders\\triangle.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|C:\\Users\\turbo\\source\\repos\\2026_Shader_Programming\\SimpleGame\\SimpleGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,19 +54,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "triangle.fs",
-              "DocumentMoniker": "C:\\Users\\turbo\\source\\repos\\2026_Shader_Programming\\SimpleGame\\Shaders\\triangle.fs",
-              "RelativeDocumentMoniker": "SimpleGame\\Shaders\\triangle.fs",
-              "ToolTip": "C:\\Users\\turbo\\source\\repos\\2026_Shader_Programming\\SimpleGame\\Shaders\\triangle.fs*",
-              "RelativeToolTip": "SimpleGame\\Shaders\\triangle.fs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-03-25T08:09:12.804Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Renderer.h",
               "DocumentMoniker": "C:\\Users\\turbo\\source\\repos\\2026_Shader_Programming\\SimpleGame\\Renderer.h",
@@ -75,8 +62,7 @@
               "RelativeToolTip": "SimpleGame\\Renderer.h",
               "ViewState": "AgIAABAAAAAAAAAAAAAiwCAAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-23T09:36:25.605Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T09:36:25.605Z"
             },
             {
               "$type": "Document",
@@ -88,8 +74,7 @@
               "RelativeToolTip": "SimpleGame\\SimpleGame.cpp",
               "ViewState": "AgIAAA0AAAAAAAAAAAAewBkAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-23T09:03:59.763Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T09:03:59.763Z"
             },
             {
               "$type": "Document",
@@ -101,20 +86,32 @@
               "RelativeToolTip": "SimpleGame\\Renderer.cpp",
               "ViewState": "AgIAADEAAAAAAAAAAAAiwEUAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-23T09:03:59.04Z",
+              "WhenOpened": "2026-03-23T09:03:59.04Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "triangle.vs",
+              "DocumentMoniker": "C:\\Users\\turbo\\source\\repos\\2026_Shader_Programming\\SimpleGame\\Shaders\\triangle.vs",
+              "RelativeDocumentMoniker": "SimpleGame\\Shaders\\triangle.vs",
+              "ToolTip": "C:\\Users\\turbo\\source\\repos\\2026_Shader_Programming\\SimpleGame\\Shaders\\triangle.vs*",
+              "RelativeToolTip": "SimpleGame\\Shaders\\triangle.vs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-03-23T08:36:16.438Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "triangle.vs",
-              "DocumentMoniker": "C:\\Users\\turbo\\source\\repos\\2026_Shader_Programming\\SimpleGame\\Shaders\\triangle.vs",
-              "RelativeDocumentMoniker": "SimpleGame\\Shaders\\triangle.vs",
-              "ToolTip": "C:\\Users\\turbo\\source\\repos\\2026_Shader_Programming\\SimpleGame\\Shaders\\triangle.vs",
-              "RelativeToolTip": "SimpleGame\\Shaders\\triangle.vs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACMAAAArAAAAAAAAAA==",
+              "Title": "triangle.fs",
+              "DocumentMoniker": "C:\\Users\\turbo\\source\\repos\\2026_Shader_Programming\\SimpleGame\\Shaders\\triangle.fs",
+              "RelativeDocumentMoniker": "SimpleGame\\Shaders\\triangle.fs",
+              "ToolTip": "C:\\Users\\turbo\\source\\repos\\2026_Shader_Programming\\SimpleGame\\Shaders\\triangle.fs",
+              "RelativeToolTip": "SimpleGame\\Shaders\\triangle.fs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-03-23T08:36:16.438Z",
+              "WhenOpened": "2026-03-25T08:09:12.804Z",
               "EditorCaption": ""
             }
           ]
