@@ -232,5 +232,5 @@ void falling()
 
 void main() 
 {
-	thrust_flame();
+	Thrust();
 }

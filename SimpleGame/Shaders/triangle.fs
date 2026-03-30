@@ -8,25 +8,13 @@ void main()
 {
     float intensity = 1.0 - v_t;
 
-    vec3 color;
+    vec3 color = mix(
+        vec3(1.0, 0.1, 0.0),
+        vec3(1.0, 1.0, 0.0),
+        intensity
+    );
 
-    if (intensity > 0.7)
-    {
-        color = vec3(1.0, 1.0, 0.3);
-    }
-    else if (intensity > 0.3)
-    {
-        color = vec3(1.0, 0.5, 0.0);
-    }
-    else
-    {
-        color = vec3(0.8, 0.1, 0.0);
-    }
-
-    float dist = length(gl_PointCoord - vec2(0.5));
-    float fade = smoothstep(0.5, 0.2, dist);
-
-    float alpha = intensity * fade;
+    float alpha = intensity * intensity;
 
     FragColor = vec4(color, alpha);
 }

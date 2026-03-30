@@ -22,6 +22,7 @@ void Renderer::Initialize(int windowSizeX, int windowSizeY)
 	//Load shaders
 	m_SolidRectShader = CompileShaders("./Shaders/SolidRect.vs", "./Shaders/SolidRect.fs");
 	m_TriangleShader = CompileShaders("./Shaders/triangle.vs", "./Shaders/triangle.fs");
+	m_FSShader = CompileShaders("./Shaders/FS.vs", "./Shaders/FS.fs");
 
 	//Create VBOs
 	CreateVertexBufferObjects();
@@ -66,8 +67,8 @@ void Renderer::CreateVertexBufferObjects()
 		float vy = (rand() % 200) / 100.0f;
 		float mass = 1;
 		float rv = -1.5f + static_cast<float>(rand()) / static_cast<float>(RAND_MAX) * 3.0;
-		float rv1 = static_cast<float>(rand()) / static_cast<float>(RAND_MAX) * 3.0;
-		float rv2 = static_cast<float>(rand()) / static_cast<float>(RAND_MAX) * 3.0;
+		float rv1 = -1.5f + static_cast<float>(rand()) / static_cast<float>(RAND_MAX) * 3.0;
+		float rv2 = -1.5f + static_cast<float>(rand()) / static_cast<float>(RAND_MAX) * 3.0;
 		float triangle[]
 			=
 		{
@@ -91,6 +92,23 @@ void Renderer::CreateVertexBufferObjects()
 	glGenBuffers(1, &m_TriangleVBO);
 	glBindBuffer(GL_ARRAY_BUFFER, m_TriangleVBO);
 	glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), vertices.data(), GL_STATIC_DRAW);
+
+	float rectFS[] // x, y, z, tx, ty : stride 5
+		=
+	{
+		-1, -1, 0, 0, 1,
+		 1,  1, 0, 1, 0,
+		-1,  1, 0, 0, 0, // triangle 1
+
+		-1, -1, 0, 0, 1,
+		 1, -1, 0, 1, 1,
+		 1,  1, 0, 1, 0, // triangle 2
+	};
+
+	glGenBuffers(1, &m_VBOFS);
+	glBindBuffer(GL_ARRAY_BUFFER, m_VBOFS);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(rectFS), rectFS, GL_STATIC_DRAW);
+
 }
 
 void Renderer::AddShader(GLuint ShaderProgram, const char* pShaderText, GLenum ShaderType)
@@ -231,7 +249,7 @@ float gTime = 0;
 
 void Renderer::DrawTriangle()
 {
-	gTime += 0.00005;
+	gTime += 0.016;
 
 	//Program select
 	glUseProgram(m_TriangleShader);
@@ -272,6 +290,30 @@ void Renderer::DrawTriangle()
 	glVertexAttribPointer(attribRV2, 1, GL_FLOAT, GL_FALSE, 9 * sizeof(float), (GLvoid*)(sizeof(float) * 8));
 
 	glDrawArrays(GL_TRIANGLES, 0, 6 * particleCount / 10);
+}
+
+void Renderer::DrawFS()
+{
+	gTime += 0.016;
+
+	//Program select
+	GLuint shader = m_FSShader;
+	glUseProgram(shader);
+
+	int uTime = glGetUniformLocation(shader, "u_Time");
+	glUniform1f(uTime, gTime);
+
+	int attribPosition = glGetAttribLocation(shader, "a_Pos");
+	glEnableVertexAttribArray(attribPosition);
+
+	int attribTex = glGetAttribLocation(shader, "a_Tex");
+	glEnableVertexAttribArray(attribTex);
+
+	glBindBuffer(GL_ARRAY_BUFFER, m_VBOFS);
+	glVertexAttribPointer(attribPosition, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), 0);
+	glVertexAttribPointer(attribTex, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (GLvoid*)(sizeof(float) * 3));
+
+	glDrawArrays(GL_TRIANGLES, 0, 6);
 }
 
 void Renderer::GetGLPosition(float x, float y, float* newX, float* newY)
