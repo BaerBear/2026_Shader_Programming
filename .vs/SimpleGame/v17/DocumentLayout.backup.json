@@ -78,8 +78,7 @@
               "RelativeToolTip": "SimpleGame\\Shaders\\SolidRect.vs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-03-30T09:02:27.464Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-30T09:02:27.464Z"
             },
             {
               "$type": "Document",
@@ -91,8 +90,7 @@
               "RelativeToolTip": "SimpleGame\\Shaders\\SolidRect.fs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-03-30T09:02:26.899Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-30T09:02:26.899Z"
             },
             {
               "$type": "Document",
@@ -104,8 +102,7 @@
               "RelativeToolTip": "SimpleGame\\Shaders\\FS.vs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-03-30T09:02:01.211Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-30T09:02:01.211Z"
             },
             {
               "$type": "Document",
@@ -115,7 +112,7 @@
               "RelativeDocumentMoniker": "SimpleGame\\Shaders\\FS.fs",
               "ToolTip": "C:\\Users\\turbo\\source\\repos\\2026_Shader_Programming\\SimpleGame\\Shaders\\FS.fs*",
               "RelativeToolTip": "SimpleGame\\Shaders\\FS.fs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2026-03-30T09:03:19.807Z",
               "EditorCaption": ""
@@ -130,8 +127,7 @@
               "RelativeToolTip": "SimpleGame\\Renderer.h",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-23T09:36:25.605Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T09:36:25.605Z"
             },
             {
               "$type": "Document",
@@ -143,8 +139,7 @@
               "RelativeToolTip": "SimpleGame\\Renderer.cpp",
               "ViewState": "AgIAACUBAAAAAAAAAAAiwDkBAABnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-23T09:03:59.04Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T09:03:59.04Z"
             },
             {
               "$type": "Document",
@@ -156,8 +151,7 @@
               "RelativeToolTip": "SimpleGame\\SimpleGame.cpp",
               "ViewState": "AgIAABUAAAAAAAAAAAAAABsAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-23T09:03:59.763Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T09:03:59.763Z"
             },
             {
               "$type": "Document",
@@ -169,8 +163,7 @@
               "RelativeToolTip": "SimpleGame\\Shaders\\triangle.vs",
               "ViewState": "AgIAADEAAAAAAAAAAAAAADUAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-03-23T08:36:16.438Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T08:36:16.438Z"
             },
             {
               "$type": "Document",
@@ -182,8 +175,7 @@
               "RelativeToolTip": "SimpleGame\\Shaders\\triangle.fs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-03-25T08:09:12.804Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-25T08:09:12.804Z"
             }
           ]
         }
