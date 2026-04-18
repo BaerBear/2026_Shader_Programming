@@ -53,7 +53,8 @@ void Circle()
     FragColor = vec4(value);
 }
 
-void Circles(){
+void Circles()
+{
     vec2 center = vec2(0.5, 0.5);
     vec2 currPos = v_Tex;
     float count = 5;
@@ -68,7 +69,58 @@ void Circles(){
     FragColor = vec4(value);
 }
 
+void Flag() 
+{
+    float amp = 0.5;
+    float speed = 4;
+    float sinInput = v_Tex.x * c_PI * 2 - u_Time * speed;   // u_Time을 빼서 깃발이 왼쪽에서 오른쪽으로 움직이는 효과
+    float sinValue = v_Tex.x * amp * (((sin(sinInput) + 1) / 2) - 0.5) + 0.5;   // v_Tex.x를 곱함으로써 왼쪽 끝은 고정됨.
+
+    float width = 0.3 * (1-v_Tex.x);                // 깃발의 오른쪽 끝이 더 얇아지도록 v_Tex.x에 반비례하는 width 계산
+    float fWidth = 0.5 * mix(1, 0.0, v_Tex.x);     // 깃발의 오른쪽 끝이 더 얇아지도록 v_Tex.x에 비례하는 width 계산 (mix 함수 사용)
+    // A * (1-a) + B * a == mix(A, B, a)
+    float grey = 0;
+
+    if(v_Tex.y < sinValue + fWidth / 2 && v_Tex.y > sinValue - fWidth / 2)
+    {
+        grey = 1;
+    }
+    else 
+    {
+        grey = 0;
+        discard;
+    }
+
+    FragColor = vec4(grey);
+}
+
+void Flame() 
+{
+    float amp = 0.5;
+    float speed = 4;
+    float newY = 1 - v_Tex.y;   // y축을 뒤집어서 아래쪽이 0, 위쪽이 1이 되도록
+    float sinInput = newY * c_PI * 2 - u_Time * speed;   // u_Time을 빼서 깃발이 왼쪽에서 오른쪽으로 움직이는 효과
+    float sinValue = newY * amp * (((sin(sinInput) + 1) / 2) - 0.5) + 0.5;   // v_Tex.x를 곱함으로써 왼쪽 끝은 고정됨.
+
+    float width = 0.3 * (1-newY);                // 깃발의 오른쪽 끝이 더 얇아지도록 v_Tex.x에 반비례하는 width 계산
+    float fWidth = 0.5 * mix(0, 1, newY);     // 깃발의 오른쪽 끝이 더 얇아지도록 v_Tex.x에 비례하는 width 계산 (mix 함수 사용)
+    // A * (1-a) + B * a == mix(A, B, a)
+    float grey = 0;
+
+    if(v_Tex.x < sinValue + fWidth / 2 && v_Tex.x > sinValue - fWidth / 2)
+    {
+        grey = 1;
+    }
+    else 
+    {
+        grey = 0;
+        discard;
+    }
+
+    FragColor = vec4(grey);
+}
+
 void main()
 {
-    Circles();
+    Flame();
 }
