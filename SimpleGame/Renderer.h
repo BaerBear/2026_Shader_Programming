@@ -14,6 +14,7 @@ public:
 	~Renderer();
 
 	bool IsInitialized();
+	GLuint CreatePngTexture(char* filePath, GLuint samplingMethod);
 	void DrawSolidRect(float x, float y, float z, float size, float r, float g, float b, float a);
 	void DrawTriangle();
 	void DrawFS();
@@ -39,7 +40,13 @@ private:
 	GLuint m_TriangleVBO = 0;
 	GLuint m_TriangleShader = 0;
 
+	//FS
 	GLuint m_VBOFS = 0;
 	GLuint m_FSShader = 0;
+
+	//Textures
+	GLuint m_RgbTexture = 0;
+	GLuint m_NumTexture[10];
+	GLuint m_NumsTexture = 0;
 };
 
