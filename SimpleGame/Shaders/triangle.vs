@@ -2,235 +2,190 @@
 
 uniform float u_Time;
 
-in vec3 a_Position;
+in vec3 a_Pos;
 in float a_Mass;
 in vec2 a_Vel;
 in float a_RV;
 in float a_RV1;
 in float a_RV2;
+in vec2 a_Tex;
+in vec3 a_RGB;
 
 out float v_Grey;
-out float v_t;
+out vec3 v_Color;
+out vec2 v_Tex;
 
 const float c_PI = 3.141592;
-const vec2 c_G = vec2(0, -9.8);
+const float c_G = -9.8;
 
-
-void Thrust()
-{
-    float lifeTime = a_RV + 0.5;
-    float newTime = (u_Time / 0.5) - a_RV1;
-    if (newTime > 0) {
-        float t = mod(newTime, 1.0);
-        float ampscale = t*0.5; // 0.5~0
-        float amp = 1 * (a_RV - 0.5) * ampscale; // 진폭
-        float sizescale = t * 2; // 시간이 지날수록 커지는 스케일
-        float period = a_RV2;
-
-        vec4 newPosition;
-        newPosition.x = a_Position.x * sizescale - 1 + 2 * t;
-        newPosition.y = a_Position.y * sizescale + amp * sin(t * 2.0 * c_PI * period);
-        newPosition.z = a_Position.z;
-        newPosition.w = 1.0;
-
-        gl_Position = newPosition;
-        v_Grey = 1.0 - t; // 시간이 지날수록 어두워지게
-    }
-    else {
-        gl_Position = vec4(-10000.0, -1000.0, 0.0, 1.0);
-    }
-
+float random(float x) {
+    return fract(sin(x) * 43758.5453123);
 }
 
-void thrust_flame()
+void Sin0()
 {
-    float newTime = u_Time + a_RV;
+	float startTime = a_RV1 * 2;
+	float newTime = u_Time - startTime;
 
-    if(newTime > 0.0)
+    if(newTime>0)
     {
-        float t = mod(newTime, 1.0);
-        float tt = t * t;
+	    float t = mod(newTime * 2, 1.0);
+        float amp = (1-t)*0.2*(a_RV-0.5)*2;
+        float period = a_RV1;
+	    vec4 newPosition;
+	    newPosition.x = a_Pos.x * a_RV2 * 0.2 + t;
+	    newPosition.y = a_Pos.y * a_RV2 * 0.2 
+		    + amp*sin(t * 2 * c_PI * period);
+	    newPosition.z = 0;
+	    newPosition.w = 1;
 
-        float startX = 0.0;
-        float startY = -0.8;
-
-        float vy = 2.5 + a_RV1; 
-
-        float spread = (a_RV - 0.5) * 0.3;
-        float wobble = sin(t * 20.0 + a_RV * 10.0) * 0.05;
-
-        float widen = t * 0.5;
-
-        vec4 pos;
-        pos.x = startX + spread * widen + wobble;
-        pos.y = startY + vy * t - 1.5 * tt;
-
-        pos.z = 0.0;
-        pos.w = 1.0;
-
-        gl_Position = pos;
+	    gl_Position = newPosition;
+        v_Grey = 1-t;
     }
     else
     {
-        gl_Position = vec4(-10000.0, 0.0, 0.0, 1.0);
+        gl_Position = vec4(100000, 10000, 100, 10);
+        v_Grey = 0;
     }
 }
 
-void Basic()
+void Sin1()
 {
-    float t = mod(u_Time*10, 1.0);
+	float t = u_Time * 2;
+	vec4 newPosition;
+	newPosition.x = a_Pos.x + t;
+	newPosition.y = a_Pos.y + 0.5*sin(t * 2 * 3.141592);
+	newPosition.z = 0;
+	newPosition.w = 1;
+
+	gl_Position = newPosition;
+}
+
+void Sin2()
+{
+	float t = mod(u_Time, 1.0);  // 0 ~ 1 구간 반복
+	vec4 newPosition;
+
+	// 화면 맨 왼쪽(-1)에서 오른쪽 끝(+1)까지 이동
+	float xOffset = -1.0 + 2.0 * t;
+
+	// t가 0~1일 때 사인 1주기
+	float yOffset = 0.5 * sin(t * 2.0 * 3.141592);
+
+	newPosition.x = a_Pos.x + xOffset;
+	newPosition.y = a_Pos.y + yOffset;
+	newPosition.z = 0.0;
+	newPosition.w = 1.0;
+
+	gl_Position = newPosition;
+}
+
+void Circle()
+{
+	float t = u_Time * 2.0 * 3.141592;
+	float r = 1.0;
 
 	vec4 newPosition;
-	newPosition = vec4(a_Position, 1);
-	newPosition += vec4(-1 + t*2, 0.5*sin(t*2*c_PI), 0, 0);
+	newPosition.x = a_Pos.x + r * cos(t);
+	newPosition.y = a_Pos.y + r * sin(t);
+	newPosition.z = 0.0;
+	newPosition.w = 1.0;
 
 	gl_Position = newPosition;
 }
 
-void circle()
+float PingPong(float t, float length)
 {
-    float t = mod(u_Time*10, 1.0);
-
-    vec4 newPosition;
-	newPosition.x = a_Position.x + cos(t*2*c_PI)*0.5;
-    newPosition.y = a_Position.y + sin(t*2*c_PI)*0.5;
-    newPosition.z = a_Position.z;
-    newPosition.w = 1.0;
-
-	gl_Position = newPosition;
+    float m = mod(t, length * 2.0);
+    return length - abs(m - length);
 }
 
-void sangsang()
+void Bounce()
 {
-   float speed = u_Time * 10.0;
-    float progress = mod(speed, 1.0);
-
-    // 1. 메인 대각선 경로 (왼쪽 위 -> 오른쪽 아래)
-    vec2 startPos = vec2(-0.8, 0.8);
-    vec2 endPos = vec2(0.8, -0.8);
-    vec2 mainPath = mix(startPos, endPos, progress);
-
-    // 2. 대각선에 수직인 벡터 계산
-    // 대각선 방향이 (1, -1)이므로, 수직 방향은 (1, 1)이 됩니다.
-    vec2 perpendicularDir = vec2(1.0, 1.0);
-
-    // 3. 수직 방향 지그재그 (빠른 왕복)
-    float zigzagSpeed = 50.0;
-    float zigzagWidth = 0.3;
-    float offset = sin(speed * zigzagSpeed) * zigzagWidth;
-
-    // 4. 최종 위치: 메인 경로 + 수직 왕복 오프셋
+	float t = u_Time * 20;
     vec4 newPosition;
-    newPosition.xy = mainPath + (perpendicularDir * offset);
-    newPosition.z = a_Position.z;
-    newPosition.w = 1.0;
 
-    // 실제 정점의 기본 위치(a_Position)를 더해 도형의 형태 유지
-    gl_Position = vec4(newPosition.xy + a_Position.xy, newPosition.z, 1.0);
-}
+    float halfWidth  = 0.1;
+    float halfHeight = 0.1;
 
-void sangsang2(){
-// 전체 진행 주기 조절
-    float speed = u_Time * 10.0;
-    float progress = mod(speed, 1.0);
+    float minX = -1.0 + halfWidth;
+    float maxX =  1.0 - halfWidth;
+    float minY = -1.0 + halfHeight;
+    float maxY =  1.0 - halfHeight;
 
-    // 1. X축 이동: 왼쪽(-0.8)에서 오른쪽(0.8)으로 일정하게 진행
-    float currentX = mix(-0.8, 0.8, progress);
+    float x = minX + PingPong(t * 0.7, maxX - minX);
+    float y = minY + PingPong(t * 1.1, maxY - minY);
 
-    // 2. Y축 이동: 중력 및 탄성 효과
-    // mod를 이용해 튕기는 주기를 만듭니다 (예: 한 번 내려오는 동안 4번 튕김)
-    float bounceCount = 3.0;
-    float bounceProgress = mod(progress * bounceCount, 1.0);
-    
-    // 포물선 공식: y = 4 * height * t * (1 - t) 
-    // 위 식을 뒤집어서 abs를 활용하면 튕기는 모양이 나옵니다.
-    float height = 0.6;
-    float bounceY = 4.0 * height * bounceProgress * (1.0 - bounceProgress);
-    
-    // 전체적인 하강 곡선 + 튕기는 높이 결합
-    // 위(0.8)에서 아래(-0.8)로 내려가는 기본 축에 bounceY를 더함
-    float baseLineY = mix(0.5, -0.8, progress);
-    float currentY = baseLineY + bounceY;
-
-    vec4 newPosition;
-    newPosition.x = a_Position.x + currentX;
-    newPosition.y = a_Position.y + currentY;
-    newPosition.z = a_Position.z;
+    newPosition.x = a_Pos.x + x;
+    newPosition.y = a_Pos.y + y;
+    newPosition.z = 0.0;
     newPosition.w = 1.0;
 
     gl_Position = newPosition;
 }
 
-float pseudoRandom(float n){
-    return fract(sin(n) * 43578.5453123);
+void Falling()
+{
+	float startTime = a_RV1 * 3;
+	float newTime = u_Time - startTime;
+
+	if(newTime > 0)
+	{
+        float lifeScale = 2.0;
+        float lifeTime = 0.5 + a_RV2 * lifeScale;
+		float t = lifeTime*fract(newTime/lifeTime); //0~lifeTime구간 반복
+		float tt = t*t;
+		float vx, vy;
+		float sx, sy;
+		vx = a_Vel.x/30;
+		vy = a_Vel.y/30;
+
+		sx = a_Pos.x * (1-random(a_RV)) + sin(a_RV*2*c_PI);
+		sy = a_Pos.y * (1-random(a_RV)) + cos(a_RV*2*c_PI);
+
+		vec4 newPos;
+		newPos.x = sx + vx*t;
+		newPos.y = sy + vy*t + 0.5*c_G*tt;
+		newPos.z = 0;
+		newPos.w = 1;
+
+		gl_Position = newPos;
+		v_Grey = 1;
+	}
+	else
+	{
+		gl_Position = vec4(-1000, 0, 0, 1);
+	}
 }
 
-void falling()
+void Shape()
 {
-    float newTime = u_Time - a_RV1 * 3;
-    if(newTime > 0) { // 시작 시간보다 현재 시간이 크면 (즉, 파티클이 생성된 이후라면)
+	float lifeTime = 0.5 + 5.0*a_RV;
+	float startTime = 5.0*a_RV1;
 
-        float lifeTime = a_RV2 + 0.5; // 파티클의 수명
+	float newTime = u_Time - startTime;
+	if(newTime > 0)
+	{
+		float t = fract(newTime/lifeTime)*lifeTime;
+		float tt = t*t;
 
-        float t =  mod(newTime, lifeTime); // newTime을 1.0으로 나눈 나머지로 반복 (계속 떨어지게). == LifeTime이 1초였다
-        float scale = pseudoRandom(a_RV1) * (lifeTime - t) / lifeTime;
-        float tt = t*t;
+		float newX = a_Pos.x + a_Vel.x*t*0.1;
+		float newY = a_Pos.y + a_Vel.y*t*0.1;
 
-        float vx = a_Vel.x / 10;
-        float vy = a_Vel.y / 10;
-
-        float initPosX = a_Position.x * scale + cos(a_RV * c_PI * 2) * 0.8;
-        float initPosY = a_Position.y * scale + sin(a_RV * c_PI * 2) * 0.8;
-
-        vec4 newPos;
-        newPos.x = initPosX + vx * t + 0.5 * c_G.x * tt;
-        newPos.y = initPosY + vy * t + 0.5 * c_G.y * tt;
-        newPos.z = 0;
-        newPos.w = 1;
-
-        gl_Position = newPos;
-    }
-    else {
-        gl_Position = vec4(-10000.0, -1000.0, 0.0, 1.0);
-    }
+		gl_Position = vec4(newX, newY, 0, 1);
+		v_Grey = 1-fract(newTime/lifeTime);
+	}
+	else
+	{
+		gl_Position = vec4(-10000, 0, 0, 1);
+		v_Grey = 1;
+	}
+	
+	v_Color = a_RGB;
+	v_Tex = a_Tex;
 }
 
-//void waterfall()
-//{
-//    // 1. 파티클마다 시작 시간 다르게
-//    float newTime = u_Time - pseudoRandom(a_RV);
-//
-//    if(t > 0.0)
-//    {
-//        float t =  mod(newTime,1.0);   // 반복 (계속 떨어지게)
-//        float tt = t * t;
-//
-//        // 2. 시작 위치 (위쪽 라인에서 생성)
-//        float startX = (a_RV * 2.0 - 1.0) * 0.3; // -0.3 ~ 0.3
-//        float startY = 0.9; // 화면 위
-//
-//        // 3. 좌우 퍼짐 (물줄기 느낌)
-//        float vx = a_RV1 * 0.3;
-//
-//        // 4. 아래로 떨어지는 속도
-//        float vy = -1.5;
-//
-//        vec4 pos;
-//        pos.x = startX + vx * localT;
-//        pos.y = startY + vy * localT + 0.5 * c_G.y * tt;
-//
-//        pos.z = 0.0;
-//        pos.w = 1.0;
-//
-//        gl_Position = pos;
-//    }
-//    else
-//    {
-//        gl_Position = vec4(-10000.0, 0.0, 0.0, 1.0);
-//    }
-//}
-
-void main() 
+void main()
 {
-	Thrust();
+    Shape();
 }
