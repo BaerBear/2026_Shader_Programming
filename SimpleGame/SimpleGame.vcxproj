@@ -172,6 +172,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="FullScreenColor.fs" />
+    <None Include="FullScreenColor.vs" />
     <None Include="Shaders\FS.fs" />
     <None Include="Shaders\FS.vs" />
     <None Include="Shaders\SolidRect.fs" />

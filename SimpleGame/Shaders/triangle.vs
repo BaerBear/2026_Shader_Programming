@@ -18,6 +18,53 @@ out vec2 v_Tex;
 const float c_PI = 3.141592;
 const float c_G = -9.8;
 
+void Ex1()	// 원 여러개 그리기
+{
+	vec4 pos = vec4(0, 0, 0, 1);
+	float radius = ceil(a_RV1 * 5.0)/5.0;
+	pos.x = a_Pos.x + radius * sin(a_RV * 2 * c_PI);
+	pos.y = a_Pos.y + radius * cos(a_RV * 2 * c_PI);
+
+	v_Color = vec3(0);
+	gl_Position = pos;
+}
+
+void Ex2()	// sin 곡선 여러개 그리기
+{
+	vec4 pos = vec4(0, 0, 0, 1);
+	float trans = ceil(a_RV1 * 5.0)/5.0;
+	pos.x = a_Pos.x + (a_RV*2.0 - 1.0);
+	pos.y = a_Pos.y + trans + 0.2*sin(a_RV*2.0 * c_PI);
+
+	v_Color = vec3(0);
+	gl_Position = pos;
+}
+
+void Ex3()	// sin 곡선 여러개 그리기
+{
+	vec4 pos = vec4(0, 0, 0, 1);
+	float trans = ceil(a_RV1 * 5.0)/5.0;
+	pos.x = a_Pos.x + (a_RV*2.0 - 1.0);
+	pos.y = a_Pos.y + trans + 0.2*sin(a_RV*2.0 * c_PI);
+
+	v_Color = vec3(0);
+	gl_Position = pos;
+}
+
+void main()
+{
+	//Ex1();
+	//Ex2();
+	Ex3();
+}
+
+
+
+
+
+
+
+/*
 float random(float x) {
     return fract(sin(x) * 43758.5453123);
 }
@@ -184,8 +231,4 @@ void Shape()
 	v_Color = a_RGB;
 	v_Tex = a_Tex;
 }
-
-void main()
-{
-    Shape();
-}
+*/

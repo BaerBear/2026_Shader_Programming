@@ -46,7 +46,13 @@ void AnimTexture()
 	FragColor.a *= value;
 }
 
+void Ex1()
+{
+	FragColor = vec4(v_Color, 1);
+}
+
 void main()
 {
-	AnimTexture();
+	//SingleTexture();
+	Ex1();
 }
