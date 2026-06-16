@@ -32,6 +32,15 @@ void Renderer::Initialize(int windowSizeX, int windowSizeY)
 	m_FSShader = CompileShaders(
 		"./Shaders/FS.vs",
 		"./Shaders/FS.fs");
+	m_FullScreenColorShader = CompileShaders(
+		"./Shaders/FullScreenColor.vs",
+		"./Shaders/FullScreenColor.fs");
+	m_ExamVSShader = CompileShaders(
+		"./Shaders/Exam_VS.vs",
+		"./Shaders/Exam_VS.fs");
+	m_ExamFSShader = CompileShaders(
+		"./Shaders/Exam_FS.vs",
+		"./Shaders/Exam_FS.fs");
 
 	//Load Textures
 	m_RgbTexture = CreatePngTexture("./textures/rgb.png", GL_NEAREST); //0 slot
@@ -189,7 +198,7 @@ void Renderer::GenParticles(int count)
 		return;
 	}
 
-	const float size = 0.1f;
+	const float size = 0.025f;
 	const float mass = 1.0f;
 
 	// 파티클 1개 = 정점 6개
@@ -653,6 +662,95 @@ void Renderer::DrawFS()
 	glDrawArrays(GL_TRIANGLES, 0, 6);
 }
 
+void Renderer::DrawExamVS()
+{
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	g_time += 0.016;
+
+	glUseProgram(m_ExamVSShader);
+
+	int uTime = glGetUniformLocation(m_ExamVSShader, "u_Time");
+	glUniform1f(uTime, g_time);
+
+	int stride = 14;
+
+	int attribPosition = glGetAttribLocation(m_ExamVSShader, "a_Pos");
+	int attribMass     = glGetAttribLocation(m_ExamVSShader, "a_Mass");
+	int attribVel      = glGetAttribLocation(m_ExamVSShader, "a_Vel");
+	int attribRV       = glGetAttribLocation(m_ExamVSShader, "a_RV");
+	int attribRV1      = glGetAttribLocation(m_ExamVSShader, "a_RV1");
+	int attribRV2      = glGetAttribLocation(m_ExamVSShader, "a_RV2");
+	int attribTex      = glGetAttribLocation(m_ExamVSShader, "a_Tex");
+	int attribRGB      = glGetAttribLocation(m_ExamVSShader, "a_RGB");
+
+	glEnableVertexAttribArray(attribPosition);
+	glEnableVertexAttribArray(attribMass);
+	glEnableVertexAttribArray(attribVel);
+	glEnableVertexAttribArray(attribRV);
+	glEnableVertexAttribArray(attribRV1);
+	glEnableVertexAttribArray(attribRV2);
+	glEnableVertexAttribArray(attribTex);
+	glEnableVertexAttribArray(attribRGB);
+
+	glBindBuffer(GL_ARRAY_BUFFER, m_VBOParticle);
+	glVertexAttribPointer(attribPosition, 3, GL_FLOAT, GL_FALSE, sizeof(float) * stride, 0);
+	glVertexAttribPointer(attribMass,     1, GL_FLOAT, GL_FALSE, sizeof(float) * stride, (GLvoid*)(sizeof(float) * 3));
+	glVertexAttribPointer(attribVel,      2, GL_FLOAT, GL_FALSE, sizeof(float) * stride, (GLvoid*)(sizeof(float) * 4));
+	glVertexAttribPointer(attribRV,       1, GL_FLOAT, GL_FALSE, sizeof(float) * stride, (GLvoid*)(sizeof(float) * 6));
+	glVertexAttribPointer(attribRV1,      1, GL_FLOAT, GL_FALSE, sizeof(float) * stride, (GLvoid*)(sizeof(float) * 7));
+	glVertexAttribPointer(attribRV2,      1, GL_FLOAT, GL_FALSE, sizeof(float) * stride, (GLvoid*)(sizeof(float) * 8));
+	glVertexAttribPointer(attribTex,      2, GL_FLOAT, GL_FALSE, sizeof(float) * stride, (GLvoid*)(sizeof(float) * 9));
+	glVertexAttribPointer(attribRGB,      3, GL_FLOAT, GL_FALSE, sizeof(float) * stride, (GLvoid*)(sizeof(float) * 11));
+
+	glDrawArrays(GL_TRIANGLES, 0, m_VBOParticleCount);
+
+	glDisable(GL_BLEND);
+}
+
+void Renderer::DrawExamFS()
+{
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+	glUseProgram(m_ExamFSShader);
+
+	int uTime = glGetUniformLocation(m_ExamFSShader, "u_Time");
+	glUniform1f(uTime, g_time);
+
+	int uRGB = glGetUniformLocation(m_ExamFSShader, "u_RGBTex");
+	glUniform1i(uRGB, 0);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, m_RgbTexture);
+
+	int uNums = glGetUniformLocation(m_ExamFSShader, "u_NumsTex");
+	glUniform1i(uNums, 1);
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture(GL_TEXTURE_2D, m_NumsTexture);
+
+	int uCurrNum = glGetUniformLocation(m_ExamFSShader, "u_CurrNumTex");
+	glUniform1i(uCurrNum, 2);
+	glActiveTexture(GL_TEXTURE2);
+	glBindTexture(GL_TEXTURE_2D, m_NumTexture[0]);
+
+	int uInputNum = glGetUniformLocation(m_ExamFSShader, "u_InputNum");
+	glUniform1i(uInputNum, 0);
+
+	int attribPosition = glGetAttribLocation(m_ExamFSShader, "a_Pos");
+	int attribTex      = glGetAttribLocation(m_ExamFSShader, "a_Tex");
+
+	glEnableVertexAttribArray(attribPosition);
+	glEnableVertexAttribArray(attribTex);
+
+	glBindBuffer(GL_ARRAY_BUFFER, m_VBOFS);
+	glVertexAttribPointer(attribPosition, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 5, 0);
+	glVertexAttribPointer(attribTex,      2, GL_FLOAT, GL_FALSE, sizeof(float) * 5, (GLvoid*)(sizeof(float) * 3));
+
+	glDrawArrays(GL_TRIANGLES, 0, 6);
+
+	glDisable(GL_BLEND);
+}
+
 void Renderer::DrawFullScreenColor(float r, float g, float b, float a)
 {
 	glEnable(GL_BLEND);
@@ -695,6 +793,7 @@ void Renderer::DrawTexture(GLuint texID, float x, float y, float scale, bool bFl
 	glVertexAttribPointer(aPos, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 3, 0);
 
 	glDrawArrays(GL_TRIANGLES, 0, 6);
+
 
 }
 

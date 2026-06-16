@@ -20,13 +20,16 @@ Renderer *g_Renderer = NULL;
 void RenderScene(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+	glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
+
+	//g_Renderer->DrawFullScreenColor(1, 1, 1, 0.2);
 
 	// Renderer Test
 	//g_Renderer->DrawSolidRect(0, 0, 0, 4, 1, 0, 1, 1);
-	g_Renderer->DrawTriangle();
-	g_Renderer->DrawFullScreenColor(0, 0, 1, 1);
+	//g_Renderer->DrawTriangle();
 	//g_Renderer->DrawFS();
+	g_Renderer->DrawExamVS();
+	//g_Renderer->DrawExamFS();
 	glutSwapBuffers();
 }
 

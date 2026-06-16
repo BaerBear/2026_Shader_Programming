@@ -3,44 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|solutionrelative:SimpleGame\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|solutionrelative:SimpleGame\\Renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\FullScreenColor.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|solutionrelative:SimpleGame\\FullScreenColor.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Shaders\\Exam_VS.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|solutionrelative:SimpleGame\\Shaders\\Exam_VS.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\SimpleGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|solutionrelative:SimpleGame\\SimpleGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\FullScreenColor.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|solutionrelative:SimpleGame\\FullScreenColor.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|solutionrelative:SimpleGame\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Shaders\\FS.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|solutionrelative:SimpleGame\\Shaders\\FS.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Shaders\\Exam_FS.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|solutionrelative:SimpleGame\\Shaders\\Exam_FS.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Shaders\\Triangle.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|solutionrelative:SimpleGame\\Shaders\\Triangle.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Shaders\\Exam_FS.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|solutionrelative:SimpleGame\\Shaders\\Exam_FS.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Shaders\\Triangle.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|solutionrelative:SimpleGame\\Shaders\\Triangle.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\LoadPng.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|solutionrelative:SimpleGame\\LoadPng.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Shaders\\FS.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|solutionrelative:SimpleGame\\Shaders\\FS.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Shaders\\Exam_VS.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{25179D6C-FA85-4619-8EDB-AC241382F6CA}|SimpleGame\\SimpleGame.vcxproj|solutionrelative:SimpleGame\\Shaders\\Exam_VS.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,133 +34,82 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FullScreenColor.vs",
-              "DocumentMoniker": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\FullScreenColor.vs",
-              "RelativeDocumentMoniker": "SimpleGame\\FullScreenColor.vs",
-              "ToolTip": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\FullScreenColor.vs",
-              "RelativeToolTip": "SimpleGame\\FullScreenColor.vs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Exam_VS.vs",
+              "DocumentMoniker": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Shaders\\Exam_VS.vs",
+              "RelativeDocumentMoniker": "SimpleGame\\Shaders\\Exam_VS.vs",
+              "ToolTip": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Shaders\\Exam_VS.vs",
+              "RelativeToolTip": "SimpleGame\\Shaders\\Exam_VS.vs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAAAHQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-06-14T15:31:25.794Z",
+              "WhenOpened": "2026-06-14T16:44:15.965Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FullScreenColor.fs",
-              "DocumentMoniker": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\FullScreenColor.fs",
-              "RelativeDocumentMoniker": "SimpleGame\\FullScreenColor.fs",
-              "ToolTip": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\FullScreenColor.fs",
-              "RelativeToolTip": "SimpleGame\\FullScreenColor.fs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-06-14T15:31:11.375Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "LoadPng.cpp",
-              "DocumentMoniker": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\LoadPng.cpp",
-              "RelativeDocumentMoniker": "SimpleGame\\LoadPng.cpp",
-              "ToolTip": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\LoadPng.cpp",
-              "RelativeToolTip": "SimpleGame\\LoadPng.cpp",
+              "DocumentIndex": 5,
+              "Title": "Exam_VS.fs",
+              "DocumentMoniker": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Shaders\\Exam_VS.fs",
+              "RelativeDocumentMoniker": "SimpleGame\\Shaders\\Exam_VS.fs",
+              "ToolTip": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Shaders\\Exam_VS.fs",
+              "RelativeToolTip": "SimpleGame\\Shaders\\Exam_VS.fs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-14T15:10:53.757Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-06-14T16:44:14.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Exam_FS.vs",
+              "DocumentMoniker": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Shaders\\Exam_FS.vs",
+              "RelativeDocumentMoniker": "SimpleGame\\Shaders\\Exam_FS.vs",
+              "ToolTip": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Shaders\\Exam_FS.vs",
+              "RelativeToolTip": "SimpleGame\\Shaders\\Exam_FS.vs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-06-14T16:44:12.781Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Exam_FS.fs",
+              "DocumentMoniker": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Shaders\\Exam_FS.fs",
+              "RelativeDocumentMoniker": "SimpleGame\\Shaders\\Exam_FS.fs",
+              "ToolTip": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Shaders\\Exam_FS.fs",
+              "RelativeToolTip": "SimpleGame\\Shaders\\Exam_FS.fs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAAAIQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-06-14T16:44:08.928Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "SimpleGame.cpp",
               "DocumentMoniker": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\SimpleGame.cpp",
               "RelativeDocumentMoniker": "SimpleGame\\SimpleGame.cpp",
               "ToolTip": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\SimpleGame.cpp",
               "RelativeToolTip": "SimpleGame\\SimpleGame.cpp",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABsAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-05-31T14:16:02.338Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Triangle.vs",
-              "DocumentMoniker": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Shaders\\triangle.vs",
-              "RelativeDocumentMoniker": "SimpleGame\\Shaders\\triangle.vs",
-              "ToolTip": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Shaders\\triangle.vs",
-              "RelativeToolTip": "SimpleGame\\Shaders\\triangle.vs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACoAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-05-31T14:12:55.376Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Triangle.fs",
-              "DocumentMoniker": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Shaders\\triangle.fs",
-              "RelativeDocumentMoniker": "SimpleGame\\Shaders\\triangle.fs",
-              "ToolTip": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Shaders\\triangle.fs",
-              "RelativeToolTip": "SimpleGame\\Shaders\\triangle.fs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAADIAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-05-31T14:12:54.575Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FS.vs",
-              "DocumentMoniker": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Shaders\\FS.vs",
-              "RelativeDocumentMoniker": "SimpleGame\\Shaders\\FS.vs",
-              "ToolTip": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Shaders\\FS.vs",
-              "RelativeToolTip": "SimpleGame\\Shaders\\FS.vs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-05-31T14:10:53.166Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FS.fs",
-              "DocumentMoniker": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Shaders\\FS.fs",
-              "RelativeDocumentMoniker": "SimpleGame\\Shaders\\FS.fs",
-              "ToolTip": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Shaders\\FS.fs",
-              "RelativeToolTip": "SimpleGame\\Shaders\\FS.fs",
-              "ViewState": "AgIAABwBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-05-31T14:10:52.142Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Renderer.h",
-              "DocumentMoniker": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Renderer.h",
-              "RelativeDocumentMoniker": "SimpleGame\\Renderer.h",
-              "ToolTip": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Renderer.h",
-              "RelativeToolTip": "SimpleGame\\Renderer.h",
-              "ViewState": "AgIAABoAAAAAAAAAAAAjwD4AAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-05-31T14:10:33.215Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Renderer.cpp",
               "DocumentMoniker": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Renderer.cpp",
               "RelativeDocumentMoniker": "SimpleGame\\Renderer.cpp",
               "ToolTip": "C:\\Users\\turbo\\Documents\\GitHub\\2026_Shader_Programming\\SimpleGame\\Renderer.cpp",
               "RelativeToolTip": "SimpleGame\\Renderer.cpp",
-              "ViewState": "AgIAAJcCAAAAAAAAAAAAALABAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAMUCAAAAAAAAAAAjwN0CAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-06-14T15:53:01.235Z",
               "EditorCaption": ""

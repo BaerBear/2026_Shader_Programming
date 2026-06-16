@@ -172,10 +172,16 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="FullScreenColor.fs" />
-    <None Include="FullScreenColor.vs" />
+    <None Include="Shaders\Exam.fs" />
+    <None Include="Shaders\Exam.vs" />
+    <None Include="Shaders\Exam_FS.fs" />
+    <None Include="Shaders\Exam_FS.vs" />
+    <None Include="Shaders\Exam_VS.fs" />
+    <None Include="Shaders\Exam_VS.vs" />
     <None Include="Shaders\FS.fs" />
     <None Include="Shaders\FS.vs" />
+    <None Include="Shaders\FullScreenColor.fs" />
+    <None Include="Shaders\FullScreenColor.vs" />
     <None Include="Shaders\SolidRect.fs" />
     <None Include="Shaders\SolidRect.vs" />
     <None Include="Shaders\Triangle.fs" />

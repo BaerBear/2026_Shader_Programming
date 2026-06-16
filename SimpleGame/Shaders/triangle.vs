@@ -51,11 +51,22 @@ void Ex3()	// sin 곡선 여러개 그리기
 	gl_Position = pos;
 }
 
+void Ex3_2() // 움직이는거
+{
+	vec4 pos = vec4(0, 0, 0, 1);
+	float t = fract(u_Time / 2.0) * 2.0;
+	pos.x = a_Pos.x + (t - 1.0);
+	pos.y = a_Pos.y;
+
+	v_Color = vec3(0);
+	gl_Position = pos;
+}
+
 void main()
 {
 	//Ex1();
 	//Ex2();
-	Ex3();
+	Ex3_2();
 }
 
 

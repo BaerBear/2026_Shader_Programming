@@ -20,6 +20,8 @@ public:
 	void DrawFS();
 	void DrawTexture(GLuint texID, float x, float y, float scale, bool bFlip);
 	void DrawFullScreenColor(float r, float g, float b, float a);
+	void DrawExamVS();
+	void DrawExamFS();
 
 private:
 	void Initialize(int windowSizeX, int windowSizeY);
@@ -64,6 +66,9 @@ private:
 
 	//Fill Full Screen
 	GLuint m_FullScreenColorShader = 0;
+
+	GLuint m_ExamVSShader = 0;
+	GLuint m_ExamFSShader = 0;
 
 };
 

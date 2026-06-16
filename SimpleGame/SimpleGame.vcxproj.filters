@@ -67,10 +67,28 @@
     <None Include="Shaders\FS.vs">
       <Filter>소스 파일\Shaders</Filter>
     </None>
-    <None Include="FullScreenColor.fs">
+    <None Include="Shaders\FullScreenColor.fs">
       <Filter>소스 파일\Shaders</Filter>
     </None>
-    <None Include="FullScreenColor.vs">
+    <None Include="Shaders\FullScreenColor.vs">
+      <Filter>소스 파일\Shaders</Filter>
+    </None>
+    <None Include="Shaders\Exam.vs">
+      <Filter>소스 파일\Shaders</Filter>
+    </None>
+    <None Include="Shaders\Exam.fs">
+      <Filter>소스 파일\Shaders</Filter>
+    </None>
+    <None Include="Shaders\Exam_VS.vs">
+      <Filter>소스 파일\Shaders</Filter>
+    </None>
+    <None Include="Shaders\Exam_VS.fs">
+      <Filter>소스 파일\Shaders</Filter>
+    </None>
+    <None Include="Shaders\Exam_FS.vs">
+      <Filter>소스 파일\Shaders</Filter>
+    </None>
+    <None Include="Shaders\Exam_FS.fs">
       <Filter>소스 파일\Shaders</Filter>
     </None>
   </ItemGroup>
